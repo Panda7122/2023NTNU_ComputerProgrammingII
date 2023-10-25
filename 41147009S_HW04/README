@@ -1,0 +1,16 @@
+41147009S 資工115 陳炫佑
+------------------------
+hw0401
+fomula of MEM is rss * KbytePerPage / totalmem
+hw0402
+FOREACH(i, arr) will declare i as int8_t*, please dereference with type
+RANGE(i, a, b) will no declare i, please declare it before use it
+hw0403
+xooxx
+and
+oxxox
+two o will paint with yellow
+hw0404
+this is so cool
+hw0405
+it's really hard...

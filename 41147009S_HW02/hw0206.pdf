@@ -1,0 +1,72 @@
+when 1<<31
+it will be change to 1000 0000 0000 0000 0000 0000 0000 0000(2)
+but it is -2147483648 in int32_t
+when -2147483648 >> 1
+in C, when you right shift, it will put vacated bit with sign bit
+so when -2147483647 >> 1
+it will be change to 1100 0000 0000 0000 0000 0000 0000 0000(2)
+then at the end, it will be 1111 1111 1111 1111 1111 1111 1111 1111(2)
+so it & any number it will be true
+
+the prove C code:
+void checkShiftbinary(int num){
+    while(num){
+        printf("%x(16)\n", num);
+        num>>=1;
+    }
+}
+
+in this function
+when num=-2147483648
+then output is
+80000000(16)
+c0000000(16)
+e0000000(16)
+f0000000(16)
+f8000000(16)
+fc000000(16)
+fe000000(16)
+ff000000(16)
+.
+.
+.
+ffffff80(16)
+ffffffc0(16)
+ffffffe0(16)
+fffffff0(16)
+fffffff8(16)
+fffffffc(16)
+fffffffe(16)
+ffffffff(16)
+when num = 2147483648
+then output will be
+80000000(16)
+40000000(16)
+20000000(16)
+10000000(16)
+08000000(16)
+04000000(16)
+02000000(16)
+01000000(16)
+00800000(16)
+00400000(16)
+00200000(16)
+00100000(16)
+.
+.
+.
+00000080(16)
+00000040(16)
+00000020(16)
+00000010(16)
+00000008(16)
+00000004(16)
+00000002(16)
+00000001(16)
+you can see that when th number is negtive
+then it right shift, it will fill 1 in vacated bit
+when number is positive, it will fill 0 in vacated bit
+so we can slove it by declare bit with unsigned integer;
+then 1<<32 will be 2147483648
+so 2147483648>>1 is 0100 0000 0000 0000 0000 0000 0000 0000(2)
+and the problem fixed

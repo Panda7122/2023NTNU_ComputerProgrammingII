@@ -1,0 +1,20 @@
+1.wchar_t is not as widely support as the char data type, 
+  particularly in older systems or on embedded devices. 
+  it mean that wchar_t will limit the portability of the code
+2.wchar_t size is unfixed, 
+  in Windows API and Visual Studio Compiler is 16 bits, 
+  but it is 32 bits in Unix-like System
+3.it take up more memory than char, 
+  This can be a concern if you are working with large amounts of text or 
+  if memory usage is a critical consideration in your application
+4.wchar_t may increase the complexity of your code 
+  because it involves concepts such as Unicode characters and multi-byte strings
+5.it don't really help people read UTF-8 characters
+  because UTF-8 span 1-4 bytes per character
+  but wchar_t is 2 bytes at some platform like Unix-like System
+source
+  wikipidea
+  chatGPT
+  man stddef.h
+  stack overflow 4588302
+  https://www.open-std.org/jtc1/sc22/wg14/www/docs/n1286.pdf

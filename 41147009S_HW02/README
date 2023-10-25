@@ -1,0 +1,14 @@
+41147009S 資工115 陳炫佑
+------------------------
+hw0201 A Matrix can do some calculate
+
+hw0202 BFS your file tree thank you TAs:)
+
+hw0203 JSON Reader but for bible
+
+hw0204 weird csv Reader don't give it too huge file, your computer may crash if you do that
+
+hw0205 git log analyzer hope it don't have some weird bug
+*The error message will be printed on the screen and not in contribution.txt
+*it will clear your contribution.txt at first time
+*please confirm your file is ascii file, don't use UTF-16 and CRLF
